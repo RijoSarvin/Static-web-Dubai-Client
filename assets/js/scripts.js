@@ -85,3 +85,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ---------------------------
+// Testimonial Slider Logic
+// ---------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".testimonial-slider");
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const prevBtn = document.querySelector(".slider-btn--prev");
+  const nextBtn = document.querySelector(".slider-btn--next");
+
+  if (!slider || slides.length === 0) return;
+
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  // Show the first slide initially
+  showSlide(currentIndex);
+
+  // Next button
+  nextBtn?.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  });
+
+  // Previous button
+  prevBtn?.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  });
+});
+
+
+
