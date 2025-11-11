@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TRIDEL | Advanced Environmental & Geo-Engineering Solutions</title>
-  <meta name="description" content="Tridel Technologies delivers advanced environmental and geo-engineering solutions with offices in UAE, India, and Australia." />
+  <meta name="description" content="Connecting Environmental Science, Engineering, and Technology across UAE, India, and Australia.">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="assets/js/script.js" defer></script>
 
@@ -14,7 +13,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
-    /* Map styling */
     #map {
       height: 460px;
       width: 100%;
@@ -23,36 +21,15 @@
       min-height: 460px;
       background: #e5e5e5;
     }
-
-    /* Global Presence styling */
-    .global-presence {
-      background-color: #f8f9fb;
-      padding: 4rem 0;
-      text-align: center;
-    }
-    .presence-box {
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      padding: 1.5rem;
-      max-width: 420px;
-      margin: 2rem auto;
-      text-align: left;
-    }
-    .presence-box h4 {
-      margin-bottom: 0.25rem;
-      color: #0a2342;
-    }
   </style>
 </head>
 
-<body class="page-home">
+<body>
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo">
         <img src="images/logo/tridel.png" alt="Tridel Logo" style="height: 32px;" />
       </a>
-
       <nav class="header__nav" id="main-nav" aria-label="Main Navigation" role="navigation">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link" aria-current="page">Home</a></li>
@@ -64,7 +41,6 @@
           <li><a href="contact.html" class="header__nav-link">Contact</a></li>
         </ul>
       </nav>
-
       <div class="header__actions">
         <a href="contact.html" class="button button--primary">Enquire Now</a>
       </div>
@@ -72,16 +48,45 @@
   </header>
 
   <main id="main-content">
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
-        <h1>Advanced Environmental & Geo-Engineering Solutions</h1>
-        <p>Delivering innovation and excellence across UAE, India & Australia.</p>
-        <a href="contact.html" class="button button--primary">Contact Us</a>
+        <h1>Connecting Environmental Science, Engineering, and Technology</h1>
+        <p>We deliver integrated hardware, software, and services for the comprehensive maritime domain.</p>
       </div>
     </section>
 
-    <!-- 🌍 GLOBAL PRESENCE -->
-    <section class="global-presence">
+    <!-- HIGHLIGHTS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Highlights</h2>
+        <div class="highlights-grid">
+          <div class="highlight-card">
+            <img src="images/highlights/buoy.jpg" alt="Buoy Product" />
+            <h3>Hardware Product</h3>
+            <p>Developing robust platforms like our custom Buoys for efficient and safe remote data collection in marine environments.</p>
+          </div>
+          <div class="highlight-card">
+            <img src="images/highlights/tems.jpg" alt="TEMS Platform" />
+            <h3>Software Platform</h3>
+            <p>Our real-time, instrument-independent TEMS platform for integrated environmental monitoring and analytics.</p>
+          </div>
+          <div class="highlight-card">
+            <img src="images/highlights/dubai-muni.jpg" alt="Dubai Municipality Project" />
+            <h3>Dubai Hydrographic Survey</h3>
+            <p>A turnkey solution for the complete hydrographic survey of Dubai’s coastal and inland waterways.</p>
+          </div>
+          <div class="highlight-card">
+            <img src="images/highlights/usv.jpg" alt="Uncrewed Surface Vessel" />
+            <h3>Ongoing Development</h3>
+            <p>Developing Uncrewed Surface Vessels (USV) applying AI and machine learning for oceanographic and environmental operations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOBAL PRESENCE -->
+    <section class="section section--light-bg">
       <div class="container">
         <h2 class="section__title">Our Global Presence</h2>
         <div class="presence-box">
@@ -93,18 +98,18 @@
           <p>Eden Hills, Adelaide, Australia</p>
         </div>
 
-        <!-- ✅ Map appears right under this section -->
+        <!-- ✅ MAP RIGHT BELOW OFFICES -->
         <div id="map"></div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__container">
       <div class="footer__brand">
         <a href="index.html" class="footer__logo">
-          <img src="images/logo/tridel.png" alt="Tridel Logo" style="height: 32px; filter: brightness(0) invert(1);" />
+          <img src="images/logo/tridel.png" alt="Tridel Logo"
+            style="height: 32px; filter: brightness(0) invert(1);" />
         </a>
         <p class="footer__tagline">Advanced Environmental & Geo-Engineering Solutions.</p>
       </div>
@@ -140,15 +145,12 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2025 Tridel Technologies. All Rights Reserved.</p>
-      </div>
+      <div class="container"><p>&copy; 2025 Tridel Technologies. All Rights Reserved.</p></div>
     </div>
   </footer>
 
   <!-- ✅ Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const LOCATIONS = [
