@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TRIDEL | Advanced Environmental & Geo-Engineering Solutions</title>
   <meta name="description" content="Tridel Technologies delivers advanced environmental and geo-engineering solutions with offices in UAE, India, and Australia." />
-  
-  <!-- External Styles -->
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="assets/js/script.js" defer></script>
 
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
-    /* Map container styling */
+    /* Map styling */
     #map {
       height: 460px;
       width: 100%;
@@ -24,7 +24,7 @@
       background: #e5e5e5;
     }
 
-    /* Optional layout tweaks */
+    /* Global Presence styling */
     .global-presence {
       background-color: #f8f9fb;
       padding: 4rem 0;
@@ -47,9 +47,6 @@
 </head>
 
 <body class="page-home">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- HEADER -->
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo">
@@ -70,34 +67,10 @@
 
       <div class="header__actions">
         <a href="contact.html" class="button button--primary">Enquire Now</a>
-        <button
-          class="header__menu-toggle"
-          id="menu-toggle"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="main-nav">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg" class="icon-open">
-            <path d="M3 12H21" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 6H21" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3 18H21" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg" class="icon-close">
-            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
       </div>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
   <main id="main-content">
     <section class="hero">
       <div class="container">
@@ -107,7 +80,7 @@
       </div>
     </section>
 
-    <!-- GLOBAL PRESENCE SECTION -->
+    <!-- 🌍 GLOBAL PRESENCE -->
     <section class="global-presence">
       <div class="container">
         <h2 class="section__title">Our Global Presence</h2>
@@ -119,15 +92,8 @@
           <h4>Tridel Technologies Pty. Ltd.</h4>
           <p>Eden Hills, Adelaide, Australia</p>
         </div>
-      </div>
-    </section>
 
-    <!-- ✅ MAP SECTION -->
-    <section id="map-section" class="section section--light-bg">
-      <div class="container">
-        <div class="section__header">
-          <h2 class="section__title">Find Us on the Map</h2>
-        </div>
+        <!-- ✅ Map appears right under this section -->
         <div id="map"></div>
       </div>
     </section>
@@ -138,14 +104,10 @@
     <div class="container footer__container">
       <div class="footer__brand">
         <a href="index.html" class="footer__logo">
-          <img src="images/logo/tridel.png" alt="Tridel Logo"
-            style="height: 32px; filter: brightness(0) invert(1);" />
+          <img src="images/logo/tridel.png" alt="Tridel Logo" style="height: 32px; filter: brightness(0) invert(1);" />
         </a>
-        <p class="footer__tagline">
-          Advanced Environmental & Geo-Engineering Solutions.
-        </p>
+        <p class="footer__tagline">Advanced Environmental & Geo-Engineering Solutions.</p>
       </div>
-
       <div class="footer__links">
         <div class="footer__links-col">
           <h3 class="footer__heading">Quick Links</h3>
@@ -164,7 +126,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer__social">
         <h3 class="footer__heading">Connect</h3>
         <a href="https://www.linkedin.com/company/tridel-technologies/" class="footer__social-link" aria-label="LinkedIn">
@@ -188,7 +149,6 @@
   <!-- ✅ Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-  <!-- ✅ Map Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const LOCATIONS = [
