@@ -30,7 +30,6 @@
 <body class="page-home">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Header -->
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo">
@@ -102,29 +101,16 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section section--light-bg news-testimonial-section">
-      <div class="container news-testimonial-grid">
-        <div class="testimonials">
-          <h2 class="section__title">What Our Clients Say</h2>
-          <div class="testimonial-slider-container">
-            <div class="testimonial-slider">
-              <div class="testimonial-slide">
-                <p class="testimonial-text">"Tridel Technologies offers high-quality projects which earned Dubai Municipality’s trust."</p>
-                <p class="testimonial-author">- Hind Mahmoud Mahaba, Dubai Municipality</p>
-              </div>
-              <div class="testimonial-slide">
-                <p class="testimonial-text">"Tridel eSpecia GIS is an efficient platform for managing environmental data."</p>
-                <p class="testimonial-author">- Sharjah Environment & Protected Areas Authority</p>
-              </div>
-              <div class="testimonial-slide">
-                <p class="testimonial-text">"Tridel contributes immensely toward the Blue Water Economy."</p>
-                <p class="testimonial-author">- Vice Admiral (Retd.) M. P. Muralidharan</p>
-              </div>
-            </div>
-            <button class="slider-btn slider-btn--prev">&#8249;</button>
-            <button class="slider-btn slider-btn--next">&#8250;</button>
-          </div>
+    <!-- Clients -->
+    <section id="clients" class="section section--light-bg">
+      <div class="container">
+        <div class="section__header"><h2 class="section__title">Our Clients & Partners</h2></div>
+        <div class="client-logos">
+          <div class="client-logo"><img src="images/clients/client-1.png" alt="Dubai Municipality" /></div>
+          <div class="client-logo"><img src="images/clients/client-2.png" alt="UAE Government" /></div>
+          <div class="client-logo"><img src="images/clients/client-3.png" alt="ENOC" /></div>
+          <div class="client-logo"><img src="images/clients/client-4.png" alt="Environmental Protection Authority" /></div>
+          <div class="client-logo"><img src="images/clients/client-5.png" alt="Scentroid" /></div>
         </div>
       </div>
     </section>
@@ -161,23 +147,9 @@
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Testimonials & Map -->
+  <!-- Map -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      // Testimonial slider
-      const slider = document.querySelector(".testimonial-slider");
-      const slides = document.querySelectorAll(".testimonial-slide");
-      let index = 0;
-      document.querySelector(".slider-btn--next").addEventListener("click", () => {
-        index = (index + 1) % slides.length;
-        slider.style.transform = `translateX(-${index * 100}%)`;
-      });
-      document.querySelector(".slider-btn--prev").addEventListener("click", () => {
-        index = (index - 1 + slides.length) % slides.length;
-        slider.style.transform = `translateX(-${index * 100}%)`;
-      });
-
-      // Map
       const LOCATIONS = [
         { id: 'uae', coords: [25.2893, 55.4034], name: 'Tridel Technologies FZCO', address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE' },
         { id: 'india', coords: [13.0371, 80.1607], name: 'Tridel Technologies Pvt. Ltd.', address: 'Porur, Chennai, India' },
