@@ -3,157 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TRIDEL | Advanced Environmental & Geo-Engineering Solutions</title>
-  <meta name="description" content="Connecting Environmental Science, Engineering, and Technology across UAE, India, and Australia.">
+  <title>TRIDEL | Marine Technology & Environmental Solutions</title>
+  <meta name="description" content="Tridel Technologies is a multinational organization in Environmental Industry, specialized in developing end-to-end solutions for Surveying, Monitoring and Mapping through environmental data collection, data management, data analytics, integration with GIS database and developing custom build software and applications.">
 
   <link rel="stylesheet" href="assets/css/styles.css" />
   <script src="assets/js/script.js" defer></script>
 
-  <!-- ✅ Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 
   <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0;
-      color: #333;
-    }
-
-    .hero {
-      background-color: #0a3a66;
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-    }
-
-    .section {
-      padding: 4rem 1rem;
-    }
-
-    .section--light-bg {
-      background: #f9fafb;
-    }
-
-    .section__title {
-      text-align: center;
-      font-size: 1.8rem;
-      color: #0a3a66;
-      font-weight: 700;
-      margin-bottom: 2rem;
-    }
-
-    /* ✅ Highlights Grid */
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-      justify-items: center;
-    }
-
-    .highlight-card {
-      background: white;
-      border-radius: 16px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      max-width: 320px;
-      transition: all 0.2s ease-in-out;
-      text-align: center;
-    }
-
-    .highlight-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .highlight-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .highlight-card h3 {
-      color: #003366;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .highlight-card p {
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    /* ✅ Clients Section */
-    .clients-logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 3rem;
-      margin-top: 2rem;
-    }
-
-    .clients-logos img {
-      height: 64px;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-    }
-
-    .clients-logos img:hover {
-      opacity: 1;
-    }
-
-    /* ✅ Global Presence Section */
-    .presence-box {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      text-align: left;
-    }
-
-    .presence-box h4 {
-      color: #003366;
-      margin-bottom: 0.25rem;
-    }
-
-    .presence-box p {
-      margin-bottom: 1rem;
-      color: #444;
-    }
-
-    /* ✅ Map */
-    #map {
+    .map-canvas {
       height: 460px;
       width: 100%;
       border-radius: 16px;
-      margin-top: 2rem;
-      background: #e5e5e5;
+      overflow: hidden;
+    }
+    .location-info.is-active {
+      outline: 2px solid #1e90ff;
+      border-radius: 8px;
     }
   </style>
 </head>
 
-<body>
+<body class="page-home">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo">
         <img src="images/logo/tridel.png" alt="Tridel Logo" style="height: 32px;" />
       </a>
-      <nav class="header__nav" id="main-nav" aria-label="Main Navigation" role="navigation">
+      <nav class="header__nav" id="main-nav" aria-label="Main Navigation">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link" aria-current="page">Home</a></li>
           <li><a href="about.html" class="header__nav-link">About Us</a></li>
@@ -166,93 +47,157 @@
       </nav>
       <div class="header__actions">
         <a href="contact.html" class="button button--primary">Enquire Now</a>
+        <button class="header__menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-open">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-close">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main id="main-content">
-    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
-        <h1>Connecting Environmental Science, Engineering, and Technology</h1>
-        <p>We deliver integrated hardware, software, and services for the comprehensive maritime domain.</p>
+        <h1 class="hero__title">Connecting Environmental Science, Engineering, and Technology</h1>
+        <p class="hero__subtitle">We deliver integrated hardware, software, and services for the comprehensive maritime domain.</p>
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
-    <section class="section">
+    <!-- Highlights -->
+    <section id="highlights" class="section">
       <div class="container">
-        <h2 class="section__title">Highlights</h2>
+        <div class="section__header"><h2 class="section__title">Highlights</h2></div>
         <div class="highlights-grid highlights-grid--4-items">
-          <div class="highlight-card">
-            <img src="images/highlights/buoy.jpg" alt="Buoy Product" />
-            <h3>Hardware Product</h3>
-            <p>Developing robust platforms like our custom Buoys for efficient and safe remote data collection in marine environments.</p>
-          </div>
-          <div class="highlight-card">
-            <img src="images/highlights/tems.jpg" alt="TEMS Platform" />
-            <h3>Software Platform</h3>
-            <p>Our real-time, instrument-independent TEMS platform for integrated environmental monitoring and analytics.</p>
-          </div>
-          <div class="highlight-card">
-            <img src="images/highlights/dubai-muni.jpg" alt="Dubai Municipality Project" />
-            <h3>Dubai Hydrographic Survey</h3>
-            <p>A turnkey solution for the complete hydrographic survey of Dubai’s coastal and inland waterways.</p>
-          </div>
-          <div class="highlight-card">
-            <img src="images/highlights/usv.jpg" alt="Uncrewed Surface Vessel" />
-            <h3>Ongoing Development</h3>
-            <p>Developing Uncrewed Surface Vessels (USV) applying AI and machine learning for oceanographic and environmental operations.</p>
-          </div>
+          <a href="products.html" class="highlight-card">
+            <img src="images/products/Tridel-Navigation-Buoy.png" alt="Tridel Navigation Buoy" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">Hardware Product</h3>
+              <p class="card__excerpt">Developing robust platforms like our custom Buoys for efficient and safe remote data collection in marine environments.</p>
+              <span class="card__link">Explore Hardware &rarr;</span>
+            </div>
+          </a>
+
+          <a href="products.html" class="highlight-card">
+            <img src="images/services/tems.png" alt="Tridel Environmental Monitoring System" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">Software Platform</h3>
+              <p class="card__excerpt">Our real-time, instrument-independent TEMS data platform for integrated environmental monitoring.</p>
+              <span class="card__link">Explore Software &rarr;</span>
+            </div>
+          </a>
+
+          <a href="success-stories.html" class="highlight-card">
+            <img src="images/projects/project-1.jpg" alt="Hydrographic Survey of Dubai" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">Dubai Hydrographic Survey</h3>
+              <p class="card__excerpt">A landmark project providing a turnkey solution for the complete hydrographic survey of Dubai's territorial waters.</p>
+              <span class="card__link">View Success Story &rarr;</span>
+            </div>
+          </a>
+
+          <a href="services.html" class="highlight-card">
+            <img src="images/products/Tridel-Aquilon-5600.png" alt="Uncrewed Surface Vehicle" class="card__image" />
+            <div class="card__content">
+              <h3 class="card__title">Ongoing Development</h3>
+              <p class="card__excerpt">Ongoing development of Uncrewed Surface Vessels (USV) applying AI and machine learning for autonomous operations.</p>
+              <span class="card__link">Explore Services &rarr;</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- CLIENTS -->
-    <section class="section section--light-bg">
+    <!-- Global Presence -->
+    <section id="map-section" class="section section--light-bg">
       <div class="container">
-        <h2 class="section__title">Our Clients & Partners</h2>
-        <div class="clients-logos">
-          <img src="images/clients/dubai-municipality.png" alt="Dubai Municipality">
-          <img src="images/clients/uae-gov.png" alt="UAE Government">
-          <img src="images/clients/enoc.png" alt="ENOC">
-          <img src="images/clients/epa.png" alt="Environmental Protection Authority">
-          <img src="images/clients/scentroid.png" alt="Scentroid">
+        <div class="section__header"><h2 class="section__title">Our Global Presence</h2></div>
+        <div class="map-layout">
+          <div id="map" class="map-canvas"></div>
+          <div class="map-details">
+            <div id="location-details-uae" class="location-info location-info--active">
+              <h3>Tridel Technologies FZCO</h3>
+              <p>QD01, DAFZA Industrial Park, Qusais, Dubai, UAE</p>
+            </div>
+            <div id="location-details-india" class="location-info">
+              <h3>Tridel Technologies Pvt. Ltd.</h3>
+              <p>No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, Tamil Nadu, INDIA, PIN-600116</p>
+            </div>
+            <div id="location-details-australia" class="location-info">
+              <h3>Tridel Technologies Pty. Ltd.</h3>
+              <p>Eden Hills, Adelaide, Australia</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- GLOBAL PRESENCE -->
-    <section class="section section--light-bg">
-      <div class="container">
-        <h2 class="section__title">Our Global Presence</h2>
-        <div class="presence-box">
-          <h4>Tridel Technologies FZCO</h4>
-          <p>QD01, DAFZA Industrial Park, Qusais, Dubai, UAE</p>
-          <h4>Tridel Technologies Pvt. Ltd.</h4>
-          <p>No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, Tamil Nadu, INDIA, PIN-600116</p>
-          <h4>Tridel Technologies Pty. Ltd.</h4>
-          <p>Eden Hills, Adelaide, Australia</p>
-        </div>
-        <div id="map"></div>
       </div>
     </section>
   </main>
 
-  <!-- ✅ Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+          <img src="images/logo/tridel1.png" alt="Tridel Logo" style="height: 32px; filter: brightness(0) invert(1);" />
+        </a>
+        <p class="footer__tagline">Connecting Environmental Science, Engineering, and Technology</p>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><p>&copy; 2025 Tridel Technologies. All Rights Reserved.</p></div></div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <!-- ✅ Fixed Map Script -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", function () {
       const LOCATIONS = [
-        { name: 'Tridel Technologies FZCO (Dubai, UAE)', coords: [25.2893458, 55.4034675], address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE' },
-        { name: 'Tridel Technologies Pvt. Ltd. (Chennai, India)', coords: [13.0371328, 80.1607926], address: 'No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, TN 600116' },
-        { name: 'Tridel Technologies Pty. Ltd. (Eden Hills, Adelaide, AU)', coords: [-35.0240257, 138.5861123], address: 'Eden Hills, Adelaide, SA, Australia' }
+        {
+          id: 'uae',
+          name: 'Tridel Technologies FZCO (Dubai, UAE)',
+          address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE',
+          coords: [25.2893458, 55.4034675]
+        },
+        {
+          id: 'india',
+          name: 'Tridel Technologies Pvt. Ltd. (Chennai, India)',
+          address: 'No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, TN 600116',
+          coords: [13.0371328, 80.1607926]
+        },
+        {
+          id: 'australia',
+          name: 'Tridel Technologies Pty. Ltd. (Eden Hills, Adelaide, AU)',
+          address: 'Eden Hills, Adelaide, SA',
+          coords: [-35.0240257, 138.5861123]
+        }
       ];
-      const map = L.map('map', { scrollWheelZoom: false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
-      const group = L.featureGroup().addTo(map);
-      LOCATIONS.forEach(loc => L.marker(loc.coords).addTo(group).bindPopup(`<strong>${loc.name}</strong><br>${loc.address}`));
-      map.fitBounds(group.getBounds(), { padding: [40, 40] });
+
+      const map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([20, 77], 2);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      const markerGroup = L.featureGroup();
+      LOCATIONS.forEach(loc => {
+        const marker = L.marker(loc.coords).bindPopup(`<strong>${loc.name}</strong><br>${loc.address}`);
+        marker.on("click", () => {
+          document.querySelectorAll(".location-info").forEach(el => el.classList.remove("is-active"));
+          const active = document.querySelector(`#location-details-${loc.id}`);
+          if (active) active.classList.add("is-active");
+        });
+        markerGroup.addLayer(marker);
+      });
+
+      markerGroup.addTo(map);
+      map.whenReady(() => {
+        map.fitBounds(markerGroup.getBounds(), { padding: [40, 40] });
+        map.invalidateSize();
+      });
     });
   </script>
 </body>
