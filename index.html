@@ -10,7 +10,7 @@
   <script src="assets/js/script.js" defer></script>
 
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
   <style>
     .map-canvas {
@@ -18,6 +18,7 @@
       width: 100%;
       border-radius: 16px;
       overflow: hidden;
+      background: #e9f3ff;
     }
     .location-info.is-active {
       outline: 2px solid #1e90ff;
@@ -29,12 +30,13 @@
 <body class="page-home">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Header -->
   <header class="header">
     <div class="container header__container">
       <a href="index.html" class="header__logo">
         <img src="images/logo/tridel.png" alt="Tridel Logo" style="height: 32px;" />
       </a>
-      <nav class="header__nav" id="main-nav" aria-label="Main Navigation">
+      <nav class="header__nav" id="main-nav">
         <ul class="header__nav-list">
           <li><a href="index.html" class="header__nav-link" aria-current="page">Home</a></li>
           <li><a href="about.html" class="header__nav-link">About Us</a></li>
@@ -47,14 +49,6 @@
       </nav>
       <div class="header__actions">
         <a href="contact.html" class="button button--primary">Enquire Now</a>
-        <button class="header__menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-open">
-            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="icon-close">
-            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
       </div>
     </div>
   </header>
@@ -80,30 +74,27 @@
               <span class="card__link">Explore Hardware &rarr;</span>
             </div>
           </a>
-
           <a href="products.html" class="highlight-card">
             <img src="images/services/tems.png" alt="Tridel Environmental Monitoring System" class="card__image" />
             <div class="card__content">
               <h3 class="card__title">Software Platform</h3>
-              <p class="card__excerpt">Our real-time, instrument-independent TEMS data platform for integrated environmental monitoring.</p>
+              <p class="card__excerpt">Our real-time, instrument-independent TEMS platform for integrated environmental monitoring.</p>
               <span class="card__link">Explore Software &rarr;</span>
             </div>
           </a>
-
           <a href="success-stories.html" class="highlight-card">
             <img src="images/projects/project-1.jpg" alt="Hydrographic Survey of Dubai" class="card__image" />
             <div class="card__content">
               <h3 class="card__title">Dubai Hydrographic Survey</h3>
-              <p class="card__excerpt">A landmark project providing a turnkey solution for the complete hydrographic survey of Dubai's territorial waters.</p>
+              <p class="card__excerpt">Turnkey solution for the hydrographic survey of Dubai’s coastal and inland waterways.</p>
               <span class="card__link">View Success Story &rarr;</span>
             </div>
           </a>
-
           <a href="services.html" class="highlight-card">
-            <img src="images/products/Tridel-Aquilon-5600.png" alt="Uncrewed Surface Vehicle" class="card__image" />
+            <img src="images/products/Tridel-Aquilon-5600.png" alt="Uncrewed Surface Vessel" class="card__image" />
             <div class="card__content">
               <h3 class="card__title">Ongoing Development</h3>
-              <p class="card__excerpt">Ongoing development of Uncrewed Surface Vessels (USV) applying AI and machine learning for autonomous operations.</p>
+              <p class="card__excerpt">Developing Uncrewed Surface Vessels (USV) using AI and ML for autonomous operations.</p>
               <span class="card__link">Explore Services &rarr;</span>
             </div>
           </a>
@@ -111,7 +102,34 @@
       </div>
     </section>
 
-    <!-- Global Presence -->
+    <!-- Testimonials -->
+    <section class="section section--light-bg news-testimonial-section">
+      <div class="container news-testimonial-grid">
+        <div class="testimonials">
+          <h2 class="section__title">What Our Clients Say</h2>
+          <div class="testimonial-slider-container">
+            <div class="testimonial-slider">
+              <div class="testimonial-slide">
+                <p class="testimonial-text">"Tridel Technologies offers high-quality projects which earned Dubai Municipality’s trust."</p>
+                <p class="testimonial-author">- Hind Mahmoud Mahaba, Dubai Municipality</p>
+              </div>
+              <div class="testimonial-slide">
+                <p class="testimonial-text">"Tridel eSpecia GIS is an efficient platform for managing environmental data."</p>
+                <p class="testimonial-author">- Sharjah Environment & Protected Areas Authority</p>
+              </div>
+              <div class="testimonial-slide">
+                <p class="testimonial-text">"Tridel contributes immensely toward the Blue Water Economy."</p>
+                <p class="testimonial-author">- Vice Admiral (Retd.) M. P. Muralidharan</p>
+              </div>
+            </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
     <section id="map-section" class="section section--light-bg">
       <div class="container">
         <div class="section__header"><h2 class="section__title">Our Global Presence</h2></div>
@@ -137,67 +155,55 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__container">
-      <div class="footer__brand">
-        <a href="index.html" class="footer__logo">
-          <img src="images/logo/tridel1.png" alt="Tridel Logo" style="height: 32px; filter: brightness(0) invert(1);" />
-        </a>
-        <p class="footer__tagline">Connecting Environmental Science, Engineering, and Technology</p>
-      </div>
-    </div>
     <div class="footer__bottom"><div class="container"><p>&copy; 2025 Tridel Technologies. All Rights Reserved.</p></div></div>
   </footer>
 
   <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- ✅ Fixed Map Script -->
+  <!-- Testimonials & Map -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
+      // Testimonial slider
+      const slider = document.querySelector(".testimonial-slider");
+      const slides = document.querySelectorAll(".testimonial-slide");
+      let index = 0;
+      document.querySelector(".slider-btn--next").addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      });
+      document.querySelector(".slider-btn--prev").addEventListener("click", () => {
+        index = (index - 1 + slides.length) % slides.length;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      });
+
+      // Map
       const LOCATIONS = [
-        {
-          id: 'uae',
-          name: 'Tridel Technologies FZCO (Dubai, UAE)',
-          address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE',
-          coords: [25.2893458, 55.4034675]
-        },
-        {
-          id: 'india',
-          name: 'Tridel Technologies Pvt. Ltd. (Chennai, India)',
-          address: 'No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, TN 600116',
-          coords: [13.0371328, 80.1607926]
-        },
-        {
-          id: 'australia',
-          name: 'Tridel Technologies Pty. Ltd. (Eden Hills, Adelaide, AU)',
-          address: 'Eden Hills, Adelaide, SA',
-          coords: [-35.0240257, 138.5861123]
-        }
+        { id: 'uae', coords: [25.2893, 55.4034], name: 'Tridel Technologies FZCO', address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE' },
+        { id: 'india', coords: [13.0371, 80.1607], name: 'Tridel Technologies Pvt. Ltd.', address: 'Porur, Chennai, India' },
+        { id: 'australia', coords: [-35.0240, 138.5861], name: 'Tridel Technologies Pty. Ltd.', address: 'Eden Hills, Adelaide, Australia' }
       ];
 
       const map = L.map('map', { scrollWheelZoom: true, zoomControl: true }).setView([20, 77], 2);
-
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(map);
 
-      const markerGroup = L.featureGroup();
+      const group = L.featureGroup();
       LOCATIONS.forEach(loc => {
         const marker = L.marker(loc.coords).bindPopup(`<strong>${loc.name}</strong><br>${loc.address}`);
         marker.on("click", () => {
           document.querySelectorAll(".location-info").forEach(el => el.classList.remove("is-active"));
-          const active = document.querySelector(`#location-details-${loc.id}`);
-          if (active) active.classList.add("is-active");
+          document.querySelector(`#location-details-${loc.id}`)?.classList.add("is-active");
         });
-        markerGroup.addLayer(marker);
+        group.addLayer(marker);
       });
-
-      markerGroup.addTo(map);
+      group.addTo(map);
       map.whenReady(() => {
-        map.fitBounds(markerGroup.getBounds(), { padding: [40, 40] });
+        map.fitBounds(group.getBounds(), { padding: [40, 40] });
         map.invalidateSize();
       });
+      window.addEventListener("resize", () => map.invalidateSize());
     });
   </script>
 </body>
