@@ -13,6 +13,130 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      color: #333;
+    }
+
+    .hero {
+      background-color: #0a3a66;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 4rem 1rem;
+    }
+
+    .section--light-bg {
+      background: #f9fafb;
+    }
+
+    .section__title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #0a3a66;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    /* ✅ Highlights Grid */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      justify-items: center;
+    }
+
+    .highlight-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      max-width: 320px;
+      transition: all 0.2s ease-in-out;
+      text-align: center;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .highlight-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-card h3 {
+      color: #003366;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-card p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    /* ✅ Clients Section */
+    .clients-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .clients-logos img {
+      height: 64px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .clients-logos img:hover {
+      opacity: 1;
+    }
+
+    /* ✅ Global Presence Section */
+    .presence-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    .presence-box h4 {
+      color: #003366;
+      margin-bottom: 0.25rem;
+    }
+
+    .presence-box p {
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    /* ✅ Map */
     #map {
       height: 460px;
       width: 100%;
@@ -110,91 +234,24 @@
           <h4>Tridel Technologies Pty. Ltd.</h4>
           <p>Eden Hills, Adelaide, Australia</p>
         </div>
-
-        <!-- ✅ MAP RIGHT BELOW OFFICES -->
         <div id="map"></div>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer__container">
-      <div class="footer__brand">
-        <a href="index.html" class="footer__logo">
-          <img src="images/logo/tridel.png" alt="Tridel Logo"
-            style="height: 32px; filter: brightness(0) invert(1);" />
-        </a>
-        <p class="footer__tagline">Advanced Environmental & Geo-Engineering Solutions.</p>
-      </div>
-      <div class="footer__links">
-        <div class="footer__links-col">
-          <h3 class="footer__heading">Quick Links</h3>
-          <ul>
-            <li><a href="about.html" class="footer__link">About Us</a></li>
-            <li><a href="products.html" class="footer__link">Products</a></li>
-            <li><a href="services.html" class="footer__link">Services</a></li>
-          </ul>
-        </div>
-        <div class="footer__links-col">
-          <h3 class="footer__heading">Company</h3>
-          <ul>
-            <li><a href="success-stories.html" class="footer__link">Success Stories</a></li>
-            <li><a href="careers.html" class="footer__link">Careers</a></li>
-            <li><a href="contact.html" class="footer__link">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__social">
-        <h3 class="footer__heading">Connect</h3>
-        <a href="https://www.linkedin.com/company/tridel-technologies/" class="footer__social-link" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="container"><p>&copy; 2025 Tridel Technologies. All Rights Reserved.</p></div>
-    </div>
-  </footer>
 
   <!-- ✅ Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const LOCATIONS = [
-        {
-          name: 'Tridel Technologies FZCO (Dubai, UAE)',
-          coords: [25.2893458, 55.4034675],
-          address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE'
-        },
-        {
-          name: 'Tridel Technologies Pvt. Ltd. (Chennai, India)',
-          coords: [13.0371328, 80.1607926],
-          address: 'No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, TN 600116'
-        },
-        {
-          name: 'Tridel Technologies Pty. Ltd. (Eden Hills, Adelaide, AU)',
-          coords: [-35.0240257, 138.5861123],
-          address: 'Eden Hills, Adelaide, SA, Australia'
-        }
+        { name: 'Tridel Technologies FZCO (Dubai, UAE)', coords: [25.2893458, 55.4034675], address: 'QD01, DAFZA Industrial Park, Qusais, Dubai, UAE' },
+        { name: 'Tridel Technologies Pvt. Ltd. (Chennai, India)', coords: [13.0371328, 80.1607926], address: 'No 10/1, 2nd Street, Thirumurugan Nagar, Arcot Road, Porur, Chennai, TN 600116' },
+        { name: 'Tridel Technologies Pty. Ltd. (Eden Hills, Adelaide, AU)', coords: [-35.0240257, 138.5861123], address: 'Eden Hills, Adelaide, SA, Australia' }
       ];
-
       const map = L.map('map', { scrollWheelZoom: false });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; OpenStreetMap'
-      }).addTo(map);
-
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
       const group = L.featureGroup().addTo(map);
-      LOCATIONS.forEach(loc => {
-        L.marker(loc.coords).addTo(group)
-          .bindPopup(`<strong>${loc.name}</strong><br>${loc.address}`);
-      });
+      LOCATIONS.forEach(loc => L.marker(loc.coords).addTo(group).bindPopup(`<strong>${loc.name}</strong><br>${loc.address}`));
       map.fitBounds(group.getBounds(), { padding: [40, 40] });
     });
   </script>
