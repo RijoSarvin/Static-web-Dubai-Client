@@ -94,8 +94,8 @@ body.nav-open .header__menu-toggle .icon-close { display: block; }
 .section__title { font-size: var(--text-3xl); margin-bottom: var(--space-sm); color: var(--color-primary-dark); }
 
 .hero, .page-header { background-color: var(--color-primary-dark); color: var(--color-white); padding: var(--space-2xl) 0; text-align: center; }
-.hero__title, .page-header__title { font-size: var(--text-4xl); color: var(--color-white); margin-bottom: var(--space-md); }
-.hero__subtitle, .page-header__subtitle { font-size: var(--text-lg); max-width: 60ch; margin: 0 auto; opacity: 0.9; }
+.hero_title, .page-header_title { font-size: var(--text-4xl); color: var(--color-white); margin-bottom: var(--space-md); }
+.hero_subtitle, .page-header_subtitle { font-size: var(--text-lg); max-width: 60ch; margin: 0 auto; opacity: 0.9; }
 
 .button { display: inline-block; padding: var(--space-sm) var(--space-lg); background-color: var(--color-primary); color: var(--color-white); border-radius: var(--radius-md); font-weight: 500; text-align: center; transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base); border: none; cursor: pointer; }
 .button:hover { background-color: var(--color-primary-dark); text-decoration: none; color: var(--color-white); }
@@ -124,7 +124,7 @@ body.nav-open .header__menu-toggle .icon-close { display: block; }
 @media (min-width: 768px) { 
     .footer__container { grid-template-columns: 2fr 2fr 1fr; align-items: start;} 
     .footer__brand { align-items: start; }
-    .footer__tagline, .footer__social { text-align: left; }
+    .footer_tagline, .footer_social { text-align: left; }
     .footer__links { justify-content: start; }
 }
 
@@ -319,7 +319,3 @@ body.nav-open .header__menu-toggle .icon-close { display: block; }
 .button:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .highlight-card:hover { transform: translateY(-6px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
 .footer__link:hover { transform: translateX(3px); }
-
-
-
-
